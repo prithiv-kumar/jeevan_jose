@@ -1,0 +1,337 @@
+{
+	"info": {
+		"_postman_id": "79079fc7-c429-4eee-9eec-1145000ac8b3",
+		"name": "TASK MANAGEMENT SYSTEM",
+		"description": "# 🚀 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "26143472"
+	},
+	"item": [
+		{
+			"name": "AUTH",
+			"item": [
+				{
+					"name": "LOGIN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"employee1\",\r\n    \"password\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/auth/login/"
+					},
+					"response": []
+				},
+				{
+					"name": "REGISTER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"employee7\",\r\n    \"password\": \"123\",\r\n    \"email\":\"employee1@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/auth/register/"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "API",
+			"item": [
+				{
+					"name": "PROJECTS",
+					"item": [
+						{
+							"name": "get projects",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{access_token}}"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{base_url}}/api/projects/"
+							},
+							"response": []
+						},
+						{
+							"name": "get projects created",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{access_token}}"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{base_url}}/api/projects/created/"
+							},
+							"response": []
+						},
+						{
+							"name": "get single project detail",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{access_token}}"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{base_url}}/api/projects/1/"
+							},
+							"response": []
+						},
+						{
+							"name": "post project",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{access_token}}"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": " {\r\n\r\n        \"members\": [\r\n          1,2\r\n        ],\r\n        \"name\": \"project1\",\r\n        \"description\": \"project1 des\",\r\n        \"start_date\": \"2024-05-13\",\r\n        \"end_date\": \"2024-05-15\"\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/api/projects/"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "TASKS",
+					"item": [
+						{
+							"name": "get tasks",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{access_token}}"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{base_url}}/api/tasks/"
+							},
+							"response": []
+						},
+						{
+							"name": "get single task",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{access_token}}"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": "{{base_url}}/api/tasks/1/"
+							},
+							"response": []
+						},
+						{
+							"name": "post task",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{access_token}}"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\": \"comment 1\",\r\n    \"task\": 1,\r\n    \"user\": 2\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/api/tasks/"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Comments",
+					"item": [
+						{
+							"name": "get comments",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{access_token}}"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{base_url}}/api/comments/"
+							},
+							"response": []
+						},
+						{
+							"name": "get single comment",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{access_token}}"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{base_url}}/api/comments/1/"
+							},
+							"response": []
+						},
+						{
+							"name": "post comment",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{access_token}}"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\": \"comment 1\",\r\n    \"task\": 1,\r\n    \"user\": 2\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/api/comments/"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "get members",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{access_token}}"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{base_url}}/api/members/"
+			},
+			"response": []
+		},
+		{
+			"name": "projects sample",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{access_token}}"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{base_url}}/api/pros/"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "access_token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEyODU4ODUxLCJpYXQiOjE3MTI4NTUyNTEsImp0aSI6ImQ1MmI0NjM5ZTZmMjQ3NTRiYzE1YzdhMTdiNzNmNzgwIiwidXNlcl9pZCI6Mn0.sRw_Ep2TG9nsZZGfLSu04vLYd3FOM5ppmA1gHiH3JSA"
+		},
+		{
+			"key": "base_url",
+			"value": "http://127.0.0.1:8000"
+		}
+	]
+}
