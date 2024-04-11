@@ -1,7 +1,8 @@
-
-# TASK MANAGEMENT 
+# TASK MANAGEMENT
 
 A brief description of what this project does
+
+The postman json collection is added to repository for API testing purposes
 
 # Project Installation Guide
 
@@ -49,11 +50,12 @@ Before you begin, ensure you have the following installed on your system:
      .\env\Scripts\activate
      ```
 
-5.  Navigate to the project:
+5. Navigate to the project:
 
-   ```bash
-   cd tasks_back
-   ```
+```bash
+cd tasks_back
+```
+
 6. Install the required Python packages:
 
    ```bash
@@ -101,14 +103,17 @@ Before you begin, ensure you have the following installed on your system:
 You can now access the project by navigating to `http://localhost:3000` in your web browser. The React client will interact with the Django server to provide the intended functionality of the project.
 
 If you encounter any issues during the installation process, please refer to the project's documentation or seek assistance from the project maintainers.
-# TASK MANAGEMENT SYSTEM API Reference
-The backend development was implemented with Django, Django Rest Framework, JWT Authetication 
 
-there are 2 apps in django backend 
+# TASK MANAGEMENT SYSTEM API Reference
+
+The backend development was implemented with Django, Django Rest Framework, JWT Authetication
+
+there are 2 apps in django backend
 accounts and api
 
 accounts handle Authentication
 api handle all other APIs
+
 ## Authentication
 
 ### Login
@@ -118,10 +123,11 @@ POST /auth/login/
 ```
 
 Request Body:
+
 ```json
 {
-    "username": "employee1",
-    "password": "123"
+  "username": "employee1",
+  "password": "123"
 }
 ```
 
@@ -132,11 +138,12 @@ POST /auth/register/
 ```
 
 Request Body:
+
 ```json
 {
-    "username": "employee7",
-    "password": "123",
-    "email": "employee1@gmail.com"
+  "username": "employee7",
+  "password": "123",
+  "email": "employee1@gmail.com"
 }
 ```
 
@@ -167,16 +174,14 @@ POST /api/projects/
 ```
 
 Request Body:
+
 ```json
 {
-    "members": [
-        1,
-        2
-    ],
-    "name": "project1",
-    "description": "project1 des",
-    "start_date": "2024-05-13",
-    "end_date": "2024-05-15"
+  "members": [1, 2],
+  "name": "project1",
+  "description": "project1 des",
+  "start_date": "2024-05-13",
+  "end_date": "2024-05-15"
 }
 ```
 
@@ -201,11 +206,12 @@ POST /api/tasks/
 ```
 
 Request Body:
+
 ```json
 {
-    "text": "comment 1",
-    "task": 1,
-    "user": 2
+  "text": "comment 1",
+  "task": 1,
+  "user": 2
 }
 ```
 
@@ -230,11 +236,12 @@ POST /api/comments/
 ```
 
 Request Body:
+
 ```json
 {
-    "text": "comment 1",
-    "task": 1,
-    "user": 2
+  "text": "comment 1",
+  "task": 1,
+  "user": 2
 }
 ```
 
@@ -255,8 +262,11 @@ GET /api/pros/
 ```
 
 ## Variables
+
 - `access_token`: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzEyODU4ODUxLCJpYXQiOjE3MTI4NTUyNTEsImp0aSI6ImQ1MmI0NjM5ZTZmMjQ3NTRiYzE1YzdhMTdiNzNmNzgwIiwidXNlcl9pZCI6Mn0.sRw_Ep2TG9nsZZGfLSu04vLYd3FOM5ppmA1gHiH3JSA
 - `base_url`: http://127.0.0.1:8000
+
 ```
 
 This Markdown document provides a structured overview of the API endpoints, their methods, request bodies, and parameters. It also includes sample requests and variables used in the requests. Adjust the content as needed to fit your requirements.
+```
