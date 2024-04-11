@@ -93,7 +93,7 @@ cd tasks_back
 3. Start the React development server:
 
    ```bash
-   npm start
+   npm run dev
    ```
 
    The React client should now be running locally on `http://localhost:3000`.
